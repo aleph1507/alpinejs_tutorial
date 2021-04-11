@@ -8,9 +8,25 @@
     <title>Alpine</title>
 </head>
 
-<body>
-    
-    <script src="bundle.js"></script>
+<!--gallery-->
+<body class="bg-gray-400">
+<div class="container mx-auto px-4 mt-4"
+     x-data="gallery.images()" x-init="console.log('gallery.images', gallery.images());">
+    <div>
+        <img x-ref="displayed" :src="gallery.images()[0].src" :alt="gallery.images()[0].alt">
+    </div>
+    <div class="flex items-center mt-4">
+        <template x-for="(img, index) in gallery.images()" :key="index">
+            <a href="#"
+               @click.prevent="gallery.selectImage($event, $refs.displayed, index)"
+               class="border border-transparent hover:border-blue-500 thumbnail">
+
+                <img :src="img.src" :alt="img.alt" class="w-12">
+            </a>
+        </template>
+    </div>
+</div>
+<script src="bundle.js"></script>
 </body>
 
 
