@@ -8,9 +8,55 @@
     <title>Alpine</title>
 </head>
 
+<!--accordion-->
 <body>
-    
-    <script src="bundle.js"></script>
+<div class="container mx-auto px-2 py-2" x-data="{
+        faqs: [
+            {
+                question: 'Why do i need Alpine JS',
+                answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur cum cumque distinctio eveniet fugiat harum illum, iste iusto libero molestiae perspiciatis quam quisquam rerum vel veniam vero, voluptates. Eligendi.',
+                isOpen: false
+            },
+            {
+                question: 'Why don\'t i need Alpine JS',
+                answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur cum cumque distinctio eveniet fugiat harum illum, iste iusto libero molestiae perspiciatis quam quisquam rerum vel veniam vero, voluptates. Eligendi.',
+                isOpen: false
+            },
+            {
+                question: 'Do i need Alpine JS',
+                answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur cum cumque distinctio eveniet fugiat harum illum, iste iusto libero molestiae perspiciatis quam quisquam rerum vel veniam vero, voluptates. Eligendi.',
+                isOpen: false
+            },
+        ]
+    }">
+    <h2 class="text-2xl font-bold">FAQs</h2>
+    <div class="leading-loose text-lg mt-6">
+        <template x-for="faq in faqs">
+            <div>
+                <button
+                        @click="faq.isOpen=!faq.isOpen"
+                        class="w-full font-bold border-b border-gray-400 py-3 flex justify-between items-center mt-4">
+                    <div x-text="faq.question"></div>
+                    <svg
+                            x-show="!faq.isOpen"
+                            xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <svg
+                            x-show="faq.isOpen"
+                            xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </button>
+
+                <div class="text-gray-700 text-sm mt-2"
+                     x-show="faq.isOpen"
+                     x-text="faq.answer"></div>
+            </div>
+        </template>
+    </div>
+</div>
+<script src="bundle.js"></script>
 </body>
 
 
