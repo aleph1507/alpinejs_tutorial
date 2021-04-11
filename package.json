@@ -1,0 +1,33 @@
+{
+  "name": "3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode=development",
+    "prod": "webpack --mode=production",
+    "watch": "webpack --mode=development --watch=true",
+    "serve": "http-server dist -p 85",
+    "start": "(npm run prod) && npm run serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "copy-webpack-plugin": "^8.1.1",
+    "css-loader": "^5.2.0",
+    "postcss": "^8.2.9",
+    "postcss-loader": "^5.2.0",
+    "style-loader": "^2.0.0",
+    "tailwindcss": "^2.1.1",
+    "webpack": "^5.31.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "alpinejs": "^2.8.2",
+    "http-server": "^0.12.3"
+  }
+}
