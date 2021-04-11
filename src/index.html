@@ -8,9 +8,46 @@
     <title>Alpine</title>
 </head>
 
-<body>
-    
-    <script src="bundle.js"></script>
+<!--tabs-->
+<body class="text-gray-800 bg-gray-200">
+<div x-data="{ tab: 1 }" class="container mx-auto p-4 mb-4">
+    <h2 class="text-2xl font-bold">Tabs</h2>
+    <ul class="flex border-b mt-6">
+        <li class="-mb-px pr-1">
+            <a href="#" class="inline-block py-2 px-4 font-semibold text-blue-500 hover:text-blue-800"
+               :class="{ 'bg-white rounded-t text-blue-700 border-t border-r' : tab === 1 }"
+               @click.prevent="tab = 1">
+                Tab 1
+            </a>
+        </li>
+        <li class="-mb-px mr-1">
+            <a href="#" class="inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
+               :class="{ 'bg-white rounded-t text-blue-700 border-t border-r' : tab === 2 }"
+               @click.prevent="tab = 2">
+                Tab 2
+            </a>
+        </li>
+        <li class="-mb-px mr-1">
+            <a href="#" class="inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
+               :class="{ 'bg-white rounded-t text-blue-700 border-t border-r' : tab === 3 }"
+               @click.prevent="tab = 3">
+                Tab 3
+            </a>
+        </li>
+    </ul>
+    <div class="content bg-white px-4 border-l border-r border-b pt-4">
+        <div x-show="tab === 1">
+            Tab 1 content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolore ea maiores recusandae repudiandae voluptatum. Atque corporis, doloribus exercitationem fugit ipsum iste maiores perferendis quam repellendus, sit sunt tenetur vero.
+        </div>
+        <div x-show="tab === 2">
+            Tab 2 content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolore ea maiores recusandae repudiandae voluptatum. Atque corporis, doloribus exercitationem fugit ipsum iste maiores perferendis quam repellendus, sit sunt tenetur vero.
+        </div>
+        <div x-show="tab === 3">
+            Tab 3 content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolore ea maiores recusandae repudiandae voluptatum. Atque corporis, doloribus exercitationem fugit ipsum iste maiores perferendis quam repellendus, sit sunt tenetur vero.
+        </div>
+    </div>
+</div>
+<script src="bundle.js"></script>
 </body>
 
 
