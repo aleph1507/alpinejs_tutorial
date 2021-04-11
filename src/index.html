@@ -8,9 +8,42 @@
     <title>Alpine</title>
 </head>
 
-<body>
-    
-    <script src="bundle.js"></script>
+<!--scroll fixed navbar-->
+<body class="bg-gray-400">
+<div x-data="{ atTop: true }">
+    <nav
+            class="p-4 w-full"
+            :class="{'bg-white fixed shadow-md' : !atTop}"
+            @scroll.window="atTop = window.pageYOffset > 10 ? false : true"
+    >
+        Top Nav goes here
+    </nav>
+    <div class="container mx-auto p-4 pt-10">
+        <div>Animi cum cumque cupiditate dicta ea esse ex explicabo in incidunt, inventore laboriosam magni maiores
+            minima officiis, omnis placeat porro quam qui quisquam quo ratione recusandae rem sed sit suscipit.
+        </div>
+        <div>Ad commodi culpa debitis dolores ea earum enim et ex expedita illum iure laudantium magnam maxime nisi,
+            nostrum, optio praesentium quasi quia quidem quod sed sequi sunt tempore vitae voluptates?
+        </div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur cumque ducimus molestiae
+            porro possimus provident, quaerat recusandae sint! Cumque debitis esse rerum? Architecto cumque labore
+            praesentium reiciendis vero voluptatum!
+        </div>
+        <div>Adipisci commodi deserunt dignissimos dolores eligendi excepturi harum in minus modi molestias nam
+            nesciunt nulla qui quidem, ratione reiciendis repellendus veritatis. Facilis illum inventore nobis
+            pariatur perspiciatis temporibus vitae voluptatum?
+        </div>
+        <div>Fuga iure nobis obcaecati recusandae, rem sed veritatis voluptate voluptates? Qui, rem voluptatem!
+            Architecto corporis dolore doloremque ea esse id in mollitia sunt tempore, vel! Consequatur deserunt
+            doloremque odio saepe!
+        </div>
+        <div>Ab aut autem consequuntur cupiditate deleniti eaque est illum in, magnam maxime necessitatibus nihil,
+            non officiis perferendis quas quisquam reprehenderit, soluta vitae? Aliquid magni quae quidem ullam
+            vitae. Beatae, in.
+        </div>
+    </div>
+</div>
+<script src="bundle.js"></script>
 </body>
 
 
