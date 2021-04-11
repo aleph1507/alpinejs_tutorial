@@ -46,5 +46,6 @@ module.exports = {
         contentBase: path.resolve(__dirname, 'dist'),
         watchContentBase: true,
         port: 9000,
+        open: true
     }
 }
